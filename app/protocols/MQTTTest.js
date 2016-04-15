@@ -1,8 +1,10 @@
 // Create a client instance
 // client = new Paho.MQTT.Client(location.hostname, Number(location.port), "clientId");
 // client = new Paho.MQTT.Client("test.mosquitto.org", Number("8080"), "clientId");
-client = new Paho.MQTT.Client("127.0.0.1", Number("8000"), "/mqtt", "AJITKUMAR");  //HiveMQ config
+// client = new Paho.MQTT.Client("localhost", Number("8000"), "/mqtt", "AJITKUMAR");  //HiveMQ config
+// client = new Paho.MQTT.Client("localhost", Number("8000"), "AJITKUMAR");  //HiveMQ config
 // client = new Paho.MQTT.Client("localhost", Number("8080"), "/mqtt", "AJITKUMAR");
+client = new Paho.MQTT.Client("broker.mqttdashboard.com", Number("8000"), "clientId-peo8S49i3D"); //http://www.hivemq.com/demos/websocket-client/
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;

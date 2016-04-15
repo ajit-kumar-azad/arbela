@@ -11,7 +11,8 @@ Ext.define('Arbela.protocols.MQTT', {
 		if (!this.client) {
 			console.log('initializing MQTT client....');
 
-			this.client = new Paho.MQTT.Client(host, Number(port), "/mqtt", clientId);  //HiveMQ config
+			// this.client = new Paho.MQTT.Client(host, Number(port), "/mqtt", clientId);  //HiveMQ config
+			this.client = new Paho.MQTT.Client(host, Number(port), clientId);  //hosted HiveMQ config
 
 			this.topic = topic;
 			this.onMsgArrivedcallback = onMessageArrived;

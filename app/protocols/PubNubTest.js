@@ -8,7 +8,28 @@ var PUBNUB_demo = PUBNUB.init({
 //     message: function(m){console.log(m)}
 // });
 
-PUBNUB_demo.publish({
-    channel: 'TEMP',
-    message: {"temp":"41.5"}
-});
+function publish1() {
+	PUBNUB_demo.publish({
+	    channel: 'HUMIDITY',
+	    message: {"humidity":"" + Math.floor((Math.random() * 100) + 1) + ""}
+	});
+}
+
+function publish() {
+	PUBNUB_demo.publish({
+	    channel: 'TEMP',
+	    message: {"temp":"" + Math.floor((Math.random() * 50) + 1) + ""}
+	});
+}
+
+function publish3() {
+	PUBNUB_demo.publish({
+	    channel: 'BULB',
+	    message: {"state":"OFF", "since": "06:00 am"}
+	});
+}
+
+setInterval(publish, 5000);
+setInterval(publish1, 5000);
+setInterval(publish3, 5000);
+

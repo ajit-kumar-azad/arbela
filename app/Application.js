@@ -36,7 +36,8 @@ Ext.define('Arbela.Application', {
         'blades.SupportTickets',
         'blades.BooksList',
         'blades.InventoryChart',
-        'blades.SparklineLine'
+        'blades.SparklineLine',
+        'blades.TwoState'
     ],
 
 

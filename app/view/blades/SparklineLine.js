@@ -10,6 +10,10 @@ Ext.define('Arbela.view.blades.SparklineLine', {
         xtype: 'expressionfield',
         fieldLabel: 'Expression',
         name: 'value1'
+    }, {
+        xtype: 'textfield',
+        fieldLabel: 'Unit',
+        name: 'value2'
     }],
 
     config: {
@@ -32,7 +36,7 @@ Ext.define('Arbela.view.blades.SparklineLine', {
             xtype: 'component',
             flex: 1,
             bind: {
-                html: '<div style="padding-left: 10px;padding-top: 20px;"><small>Current Value</small><span class="bigtext">{value1}</span></div>'
+                html: '<div style="padding-left: 10px;padding-top: 20px;"><small>Current Value</small><span class="bigtext">{value1} {value2}</span></div>'
             }
         }]
     },
