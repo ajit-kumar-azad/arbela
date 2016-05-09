@@ -7121,18 +7121,22 @@ small {
   font-size: 25px; }
 
 /* line 77, ../../../../sass/src/Application.scss */
+.bigger-text {
+  font-size: 45px; }
+
+/* line 81, ../../../../sass/src/Application.scss */
 .blade-form {
   margin-top: 10px; }
 
-/* line 81, ../../../../sass/src/Application.scss */
+/* line 85, ../../../../sass/src/Application.scss */
 .add-blade-btn {
   margin-top: 10px; }
 
-/* line 85, ../../../../sass/src/Application.scss */
+/* line 89, ../../../../sass/src/Application.scss */
 .product-name {
   font-size: 36px; }
 
-/* line 89, ../../../../sass/src/Application.scss */
+/* line 93, ../../../../sass/src/Application.scss */
 .branding-header {
   background-color: #273e48 !important;
   color: white; }

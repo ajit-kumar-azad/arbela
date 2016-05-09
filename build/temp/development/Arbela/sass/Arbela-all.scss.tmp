@@ -1,6 +1,9 @@
+$app-name:   'Arbela' !default;
 $image-search-path: '/Users/ajitkumar/repos/git/arbela/build/development/Arbela/resources';
-$theme-name:  'ext-theme-crisp' !default;
+$theme-name:   'ext-theme-crisp' !default;
 $include-arbela-application: true;
+$include-arbela-protocols-mqtt: true;
+$include-arbela-protocols-pubnub: true;
 $include-arbela-view-myviewport: true;
 $include-arbela-view-api-blade: true;
 $include-arbela-view-api-card: true;
@@ -8,15 +11,23 @@ $include-arbela-view-api-datasource: true;
 $include-arbela-view-blades-bookslist: true;
 $include-arbela-view-blades-dummy: true;
 $include-arbela-view-blades-inventorychart: true;
+$include-arbela-view-blades-sparklineline: true;
 $include-arbela-view-blades-supporttickets: true;
 $include-arbela-view-blades-totalsales: true;
+$include-arbela-view-blades-twostate: true;
 $include-arbela-view-blades-websitetraffics: true;
+$include-arbela-view-cards-currenttime: true;
+$include-arbela-view-cards-openweathermaphumidity: true;
+$include-arbela-view-cards-openweathermaptemp: true;
 $include-arbela-view-common-bladepanel: true;
 $include-arbela-view-common-calculatedfield: true;
 $include-arbela-view-common-exprparser: true;
 $include-arbela-view-common-expressionfield: true;
 $include-arbela-view-common-windowtoolbar: true;
 $include-arbela-view-datasources-dummy: true;
+$include-arbela-view-datasources-dweetio: true;
+$include-arbela-view-datasources-mqtt: true;
+$include-arbela-view-datasources-pubnub: true;
 $include-arbela-view-datasources-sales: true;
 $include-arbela-view-db-card-newcard: true;
 $include-arbela-view-db-card-newcardviewcontroller: true;
@@ -1103,17 +1114,59 @@ $include-extthemeneptune-picker-month: true;
 $include-extthemeneptune-resizer-splitter: true;
 $include-extthemeneptune-toolbar-paging: true;
 $include-extthemeneptune-toolbar-toolbar: true;
+
+
+/* ======================== ETC ======================== */
+
 /* including package ext-theme-base */
+$ext-theme-base-resource-root: '' !default;
+$ext-theme-base-resource-path: 'images' !default;
+$current-package: 'ext-theme-base';
+$current-resource-root: $ext-theme-base-resource-root;
+$relative-image-path-for-uis: $ext-theme-base-resource-path;
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
+
 /* including package ext-theme-neutral */
+$ext-theme-neutral-resource-root: '' !default;
+$ext-theme-neutral-resource-path: 'images' !default;
+$current-package: 'ext-theme-neutral';
+$current-resource-root: $ext-theme-neutral-resource-root;
+$relative-image-path-for-uis: $ext-theme-neutral-resource-path;
 @import '../../../../../ext/packages/ext-theme-neutral/sass/etc/all';
+
 /* including package ext-theme-neptune */
+$ext-theme-neptune-resource-root: '' !default;
+$ext-theme-neptune-resource-path: 'images' !default;
+$current-package: 'ext-theme-neptune';
+$current-resource-root: $ext-theme-neptune-resource-root;
+$relative-image-path-for-uis: $ext-theme-neptune-resource-path;
 @import '../../../../../ext/packages/ext-theme-neptune/sass/etc/all';
+
 /* including package ext-theme-crisp */
+$ext-theme-crisp-resource-root: '' !default;
+$ext-theme-crisp-resource-path: 'images' !default;
+$current-package: 'ext-theme-crisp';
+$current-resource-root: $ext-theme-crisp-resource-root;
+$relative-image-path-for-uis: $ext-theme-crisp-resource-path;
 @import '../../../../../ext/packages/ext-theme-crisp/sass/etc/all';
+
+
+/* ======================== VAR ======================== */
+
 /* including package Arbela */
+$Arbela-resource-root: '' !default;
+$Arbela-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $Arbela-resource-root;
+$relative-image-path-for-uis: $Arbela-resource-path;
 @import '../../../../../sass/var/Application';
+
 /* including package ext-theme-crisp */
+$ext-theme-crisp-resource-root: '' !default;
+$ext-theme-crisp-resource-path: 'images' !default;
+$current-package: 'ext-theme-crisp';
+$current-resource-root: $ext-theme-crisp-resource-root;
+$relative-image-path-for-uis: $ext-theme-crisp-resource-path;
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/Component';
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/panel/Tool';
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/resizer/Splitter';
@@ -1137,7 +1190,13 @@ $include-extthemeneptune-toolbar-toolbar: true;
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/layout/container/Accordion';
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/resizer/Resizer';
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/window/Toast';
+
 /* including package ext-theme-neptune */
+$ext-theme-neptune-resource-root: '' !default;
+$ext-theme-neptune-resource-path: 'images' !default;
+$current-package: 'ext-theme-neptune';
+$current-resource-root: $ext-theme-neptune-resource-root;
+$relative-image-path-for-uis: $ext-theme-neptune-resource-path;
 @import '../../../../../ext/packages/ext-theme-neptune/sass/var/Component';
 @import '../../../../../ext/packages/ext-theme-neptune/sass/var/LoadMask';
 @import '../../../../../ext/packages/ext-theme-neptune/sass/var/ProgressBar';
@@ -1178,7 +1237,13 @@ $include-extthemeneptune-toolbar-toolbar: true;
 @import '../../../../../ext/packages/ext-theme-neptune/sass/var/selection/CheckboxModel';
 @import '../../../../../ext/packages/ext-theme-neptune/sass/var/toolbar/Breadcrumb';
 @import '../../../../../ext/packages/ext-theme-neptune/sass/var/window/Toast';
+
 /* including package ext-theme-neutral */
+$ext-theme-neutral-resource-root: '' !default;
+$ext-theme-neutral-resource-path: 'images' !default;
+$current-package: 'ext-theme-neutral';
+$current-resource-root: $ext-theme-neutral-resource-root;
+$relative-image-path-for-uis: $ext-theme-neutral-resource-path;
 @import '../../../../../ext/packages/ext-theme-neutral/sass/var/scroll/Indicator';
 @import '../../../../../ext/packages/ext-theme-neutral/sass/var/Component';
 @import '../../../../../ext/packages/ext-theme-neutral/sass/var/FocusManager';
@@ -1231,12 +1296,31 @@ $include-extthemeneptune-toolbar-toolbar: true;
 @import '../../../../../ext/packages/ext-theme-neutral/sass/var/ux/dashboard/GoogleRssView';
 @import '../../../../../ext/packages/ext-theme-neutral/sass/var/view/MultiSelector';
 @import '../../../../../ext/packages/ext-theme-neutral/sass/var/window/Toast';
+
 /* including package ext-theme-base */
-@import '../../../../../ext/packages/ext-theme-base/sass/var/Component';
-/* including package sencha-charts */
-@import '../../../../../ext/packages/sencha-charts/sass/var/chart/AbstractChart';
-/* including package ext-theme-base */
+$ext-theme-base-resource-root: '' !default;
 $ext-theme-base-resource-path: 'images' !default;
+$current-package: 'ext-theme-base';
+$current-resource-root: $ext-theme-base-resource-root;
+$relative-image-path-for-uis: $ext-theme-base-resource-path;
+@import '../../../../../ext/packages/ext-theme-base/sass/var/Component';
+
+/* including package sencha-charts */
+$sencha-charts-resource-root: 'sencha-charts' !default;
+$sencha-charts-resource-path: 'sencha-charts/images' !default;
+$current-package: 'sencha-charts';
+$current-resource-root: $sencha-charts-resource-root;
+$relative-image-path-for-uis: $sencha-charts-resource-path;
+@import '../../../../../ext/packages/sencha-charts/sass/var/chart/AbstractChart';
+
+
+/* ======================== RULE ======================== */
+
+/* including package ext-theme-base */
+$ext-theme-base-resource-root: '' !default;
+$ext-theme-base-resource-path: 'images' !default;
+$current-package: 'ext-theme-base';
+$current-resource-root: $ext-theme-base-resource-root;
 $relative-image-path-for-uis: $ext-theme-base-resource-path;
 @import '../../../../../ext/packages/ext-theme-base/sass/src/scroll/TouchScroller';
 @import '../../../../../ext/packages/ext-theme-base/sass/src/rtl/util/Renderable';
@@ -1304,8 +1388,12 @@ $relative-image-path-for-uis: $ext-theme-base-resource-path;
 @import '../../../../../ext/packages/ext-theme-base/sass/src/selection/CheckboxModel';
 @import '../../../../../ext/packages/ext-theme-base/sass/src/slider/Multi';
 @import '../../../../../ext/packages/ext-theme-base/sass/src/toolbar/Breadcrumb';
+
 /* including package ext-theme-neutral */
+$ext-theme-neutral-resource-root: '' !default;
 $ext-theme-neutral-resource-path: 'images' !default;
+$current-package: 'ext-theme-neutral';
+$current-resource-root: $ext-theme-neutral-resource-root;
 $relative-image-path-for-uis: $ext-theme-neutral-resource-path;
 @import '../../../../../ext/packages/ext-theme-neutral/sass/src/scroll/Indicator';
 @import '../../../../../ext/packages/ext-theme-neutral/sass/src/Component';
@@ -1375,8 +1463,12 @@ $relative-image-path-for-uis: $ext-theme-neutral-resource-path;
 @import '../../../../../ext/packages/ext-theme-neutral/sass/src/ux/grid/SubTable';
 @import '../../../../../ext/packages/ext-theme-neutral/sass/src/view/MultiSelector';
 @import '../../../../../ext/packages/ext-theme-neutral/sass/src/window/Toast';
+
 /* including package ext-theme-neptune */
+$ext-theme-neptune-resource-root: '' !default;
 $ext-theme-neptune-resource-path: 'images' !default;
+$current-package: 'ext-theme-neptune';
+$current-resource-root: $ext-theme-neptune-resource-root;
 $relative-image-path-for-uis: $ext-theme-neptune-resource-path;
 @import '../../../../../ext/packages/ext-theme-neptune/sass/src/dd/StatusProxy';
 @import '../../../../../ext/packages/ext-theme-neptune/sass/src/panel/Panel';
@@ -1386,12 +1478,20 @@ $relative-image-path-for-uis: $ext-theme-neptune-resource-path;
 @import '../../../../../ext/packages/ext-theme-neptune/sass/src/form/field/File';
 @import '../../../../../ext/packages/ext-theme-neptune/sass/src/form/field/HtmlEditor';
 @import '../../../../../ext/packages/ext-theme-neptune/sass/src/resizer/Resizer';
+
 /* including package sencha-charts */
+$sencha-charts-resource-root: 'sencha-charts' !default;
 $sencha-charts-resource-path: 'sencha-charts/images' !default;
+$current-package: 'sencha-charts';
+$current-resource-root: $sencha-charts-resource-root;
 $relative-image-path-for-uis: $sencha-charts-resource-path;
 @import '../../../../../ext/packages/sencha-charts/sass/src/chart/AbstractChart';
+
 /* including package Arbela */
+$Arbela-resource-root: '' !default;
 $Arbela-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $Arbela-resource-root;
 $relative-image-path-for-uis: $Arbela-resource-path;
 @import '../../../../../sass/src/view/ds/List';
 @import '../../../../../sass/src/view/ws/Workspace';

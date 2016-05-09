@@ -5,7 +5,10 @@ Ext.define('Arbela.view.db.main.Dashboard', {
     requires: [
         'Arbela.view.db.main.DashboardViewModel',
         'Arbela.view.db.main.DashboardViewController',
-        'Arbela.view.db.tb.Toolbar'
+        'Arbela.view.db.tb.Toolbar',
+        'Arbela.view.cards.CurrentTime',
+        'Arbela.view.cards.OpenWeatherMapTemp',
+        'Arbela.view.cards.OpenWeatherMapHumidity'
     ],
 
     controller: 'dbdashboard',
@@ -19,7 +22,10 @@ Ext.define('Arbela.view.db.main.Dashboard', {
         // closable: true,
         // columnWidths: [0.25, 0.25, 0.25],
         parts: {
-            'card': 'card'
+            'card': 'card',
+            'currenttime': 'currenttime',
+            'weather': 'weather',
+            'humidity': 'humidity'
         },
         datasources: null
 
@@ -32,17 +38,17 @@ Ext.define('Arbela.view.db.main.Dashboard', {
     },
 
     defaultContent: [{
-        type: 'card',
+        type: 'currenttime',
         columnIndex: 0,
-        height: 80
+        height: 130
     }, {
-        type: 'card',
+        type: 'weather',
         columnIndex: 1,
-        height: 80
+        height: 130
     }, {
-        type: 'card',
+        type: 'humidity',
         columnIndex: 2,
-        height: 80
+        height: 130
     }],
 
     tbar: {

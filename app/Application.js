@@ -37,7 +37,10 @@ Ext.define('Arbela.Application', {
         'blades.BooksList',
         'blades.InventoryChart',
         'blades.SparklineLine',
-        'blades.TwoState'
+        'blades.TwoState',
+        'cards.CurrentTime',
+        'cards.OpenWeatherMapTemp',
+        'cards.OpenWeatherMapHumidity'
     ],
 
 

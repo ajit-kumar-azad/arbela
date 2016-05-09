@@ -65,14 +65,12 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
         },
         _tags = (Ext.platformTags = {}),
 
-    //<debug>
         // All calls to _debug are commented out to speed up old browsers a bit;
         // yes that makes a difference because the cost of concatenating strings
         // and passing them into _debug() adds up pretty quickly.
         _debug = function (message) {
             //console.log(message);
         },
-    //</debug>
         _apply = function (object, config, defaults) {
             if (defaults) {
                 _apply(object, defaults);
@@ -173,9 +171,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             /*
              * simple helper method for debugging
              */
-            //<debug>
             debug: _debug,
-            //</debug>
 
             /**
              * enables / disables loading scripts via script / link elements rather
@@ -561,9 +557,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                     }
 
                     if (!Boot.scripts[key = Boot.canonicalUrl(src)]) {
-                        //<debug>
 //                         _debug("creating entry " + key + " in Boot.init");
-                        //</debug>
                         entry = new Entry({
                             key: key,
                             url: src,
@@ -711,9 +705,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             },
 
             load: function (request) {
-                //<debug>
 //                 _debug("Boot.load called");
-                //</debug>
                 var request = new Request(request);
 
                 if (request.sync || Boot.syncMode) {
@@ -723,9 +715,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                 // If there is a request in progress, we must
                 // queue this new request to be fired  when the current request completes.
                 if (Boot.currentRequest) {
-                    //<debug>
 //                     _debug("current active request, suspending this request");
-                    //</debug>
                     // trigger assignment of entries now to ensure that overlapping
                     // entries with currently running requests will synchronize state
                     // with this pending one as they complete
@@ -739,9 +729,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             },
 
             loadSync: function (request) {
-                //<debug>
 //                 _debug("Boot.loadSync called");
-                //</debug>
                 var request = new Request(request);
 
                 Boot.syncMode++;
@@ -770,9 +758,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                     while(Boot.suspendedQueue.length > 0) {
                         next = Boot.suspendedQueue.shift();
                         if(!next.done) {
-                            //<debug>
 //                             _debug("resuming suspended request");
-                            //</debug>
                             Boot.load(next);
                             break;
                         }
@@ -857,9 +843,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
                 }
 
                 try {
-                    //<debug>
 //                     _debug("fetching " + url + " " + (async ? "async" : "sync"));
-                    //</debug>
                     xhr.open('GET', url, async);
                     xhr.send(null);
                 } catch (err) {
@@ -1214,9 +1198,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             var listeners = this.listeners,
                 listener;
             if(listeners) {
-                //<debug>
 //                 _debug("firing request listeners");
-                //</debug>
                 while((listener = listeners.shift())) {
                     listener(this);
                 }
@@ -1233,9 +1215,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             return cfg;
         }
 
-        //<debug>
 //         _debug("creating entry for " + cfg.url);
-        //</debug>
 
         var charset = cfg.charset || Boot.config.charset,
             manifest = Ext.manifest,
@@ -1276,9 +1256,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
         isCrossDomain: function() {
             var me = this;
             if(me.crossDomain === undefined) {
-                //<debug>
 //                 _debug("checking " + me.getLoadUrl() + " for prefix " + Boot.origin);
-                //</debug>
                 me.crossDomain = (me.getLoadUrl().indexOf(Boot.origin) !== 0);
             }
             return me.crossDomain;
@@ -1301,9 +1279,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             var me = this,
                 el = me.el;
             if (!el) {
-                //<debug>
 //                 _debug("creating element for " + me.url);
-                //</debug>
                 if (me.isCss()) {
                     tag = tag || "link";
                     el = doc.createElement(tag);
@@ -1364,13 +1340,11 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             me.loaded = true;
             if ((exception || status === 0) && !_environment.phantom) {
                 me.error =
-                    //<debug>
                     ("Failed loading synchronously via XHR: '" + url +
                         "'. It's likely that the file is either being loaded from a " +
                         "different domain or from the local file system where cross " +
                         "origin requests are not allowed for security reasons. Try " +
                         "asynchronous loading instead.") ||
-                    //</debug>
                     true;
                 me.evaluated = true;
             }
@@ -1382,11 +1356,9 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             }
             else {
                 me.error =
-                    //<debug>
                     ("Failed loading synchronously via XHR: '" + url +
                         "'. Please verify that the file exists. XHR status code: " +
                         status) ||
-                    //</debug>
                     true;
                 me.evaluated = true;
             }
@@ -1425,9 +1397,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
         },
 
         inject: function (content, asset) {
-            //<debug>
 //             _debug("injecting content for " + this.url);
-            //</debug>
             var me = this,
                 head = Boot.getHead(),
                 url = me.url,
@@ -1671,9 +1641,7 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
             var listeners = this.listeners,
                 listener;
             if(listeners && listeners.length > 0) {
-                //<debug>
 //                 _debug("firing event listeners for url " + this.url);
-                //</debug>
                 while((listener = listeners.shift())) {
                     listener(this);
                 }
@@ -1696,16 +1664,6 @@ Ext.Boot = Ext.Boot || (function (emptyFn) {
         doc.cookie = 'ext-cache=1; expires=' + date + '; path=' + (path || '/');
     };
 
-//<if nonBrowser>
-    if (_environment.node) {
-        Boot.prototype.load = Boot.prototype.loadSync = function (request) {
-            // @TODO
-            require(filePath);
-            onLoad.call(scope);
-        };
-        Boot.prototype.init = emptyFn;
-    }
-//</if>
 
     Boot.init();
     return Boot;
@@ -1727,7 +1685,6 @@ Ext.globalEval = Ext.globalEval || (this.execScript
     ? function (code) { execScript(code); }
     : function ($$code) { eval.call(window, $$code); });
 
-//<feature legacyBrowser>
 /*
  * Only IE8 & IE/Quirks lack Function.prototype.bind so we polyfill that here.
  */
@@ -1758,7 +1715,6 @@ if (!Function.prototype.bind) {
         bind.$extjs = true; // to detect this polyfill if one want to improve it
     }());
 }
-//</feature>
 
 //</editor-fold>
 
@@ -1805,3 +1761,231 @@ Ext.getResourcePath = function (path, poolName, packageName) {
     output.push(path);
     return output.join('/');
 };
+// here, the extra check for window['Ext'] is needed for use with cmd-test
+// code injection.  we need to make that this file will sync up with page global
+// scope to avoid duplicate Ext.Boot state.  That check is after the initial Ext check
+// to allow the sandboxing template to inject an appropriate Ext var and prevent the
+// global detection.
+var Ext = Ext || window['Ext'] || {};
+
+
+//<editor-fold desc="Microloader">
+/**
+ * @Class Ext.Microloader
+ * @singleton
+ */
+Ext.Microloader = Ext.Microloader || (function () {
+    var Boot = Ext.Boot,
+        _listeners = [],
+        _loaded = false,
+
+        Microloader = {
+            detectPlatformTags: function () {
+                if (Ext.beforeLoad) {
+                    Ext.beforeLoad(Ext.platformTags);
+                }
+            },
+
+            initPlatformTags: function () {
+                Microloader.detectPlatformTags();
+            },
+
+            init: function () {
+                Microloader.initPlatformTags();
+                var readyHandler = Ext._beforereadyhandler;
+                Ext._beforereadyhandler = function () {
+                    if (Ext.Boot !== Boot) {
+                        Ext.apply(Ext.Boot, Boot);
+                        Ext.Boot = Boot;
+                    }
+                    if(readyHandler) {
+                        readyHandler();
+                    }
+                };
+            },
+
+            run: function() {
+                Microloader.init();
+                var manifest = Ext.manifest;
+
+                if (typeof manifest === "string") {
+                    var extension = ".json",
+                        url = manifest.indexOf(extension) === manifest.length - extension.length
+                            ? manifest
+                            : manifest + ".json";
+
+                    Boot.fetch(url, function(result){
+                        manifest = Ext.manifest = JSON.parse(result.content);
+                        Microloader.load(manifest);
+                    });
+                } else {
+                    Microloader.load(manifest);
+                }
+            },
+
+            /**
+             *
+             * @param manifestDef
+             */
+            load: function (manifest) {
+                var loadOrder = manifest.loadOrder,
+                    loadOrderMap = (loadOrder) ? Boot.createLoadOrderMap(loadOrder) : null,
+                    urls = [],
+                    js = manifest.js || [],
+                    css = manifest.css || [],
+                    resource, i, len, include,
+                    loadedFn = function () {
+                        _loaded = true;
+                        Microloader.notify();
+                    },
+                    loadResources = function(resources, addLoadedFn){
+                        for (len = resources.length, i = 0; i < len; i++) {
+                            resource = resources[i];
+                            include = true;
+                            if (resource.platform && !Boot.filterPlatform(resource.platform)) {
+                                include = false;
+                            }
+                            if (include) {
+                                urls.push(resource.path);
+                            }
+                        }
+
+                        if(!addLoadedFn) {
+                            Boot.loadSync({
+                                url: urls,
+                                loadOrder: loadOrder,
+                                loadOrderMap: loadOrderMap
+                            });
+                        } else {
+                            Boot.load({
+                                url: urls,
+                                loadOrder: loadOrder,
+                                loadOrderMap: loadOrderMap,
+                                sequential: true,
+                                success: loadedFn,
+                                failure:  loadedFn
+                            });
+                        }
+                    };
+
+                if (loadOrder) {
+                    manifest.loadOrderMap = loadOrderMap;
+                }
+
+                loadResources(css.concat(js), true);
+            },
+
+            onMicroloaderReady: function (listener) {
+                if (_loaded) {
+                    listener();
+                } else {
+                    _listeners.push(listener);
+                }
+            },
+
+            /**
+             * @private
+             */
+            notify: function () {
+                Boot.debug("notifying microloader ready listeners...");
+                var listener;
+                while((listener = _listeners.shift())) {
+                    listener();
+                }
+            }
+        };
+
+    return Microloader;
+}());
+
+//</editor-fold>
+
+/**
+ * the current application manifest
+ *
+ *
+ * {
+ *  name: 'name',
+ *  version: <checksum>,
+ *  debug: {
+ *      hooks: {
+ *          "*": true
+ *      }
+ *  },
+ *  localStorage: false,
+ *  mode: production,
+ *  js: [
+ *      ...
+ *      {
+ *          path: '../boo/baz.js',
+ *          version: <checksum>,
+ *          update: full | delta | <falsy>,
+ *          platform: ['phone', 'ios', 'android']
+ *      },
+ *      {
+ *          path: 'http://some.domain.com/api.js',
+ *          remote: true
+ *      },
+ *      ...
+ *  ],
+ *  css: [
+ *      ...
+ *      {
+ *          path: '../boo/baz.css',
+ *          version: <checksum>,
+ *          update: full | delta | <falsy>,
+ *          platform: ['phone', 'ios', 'android']
+ *      },
+ *      ...
+ *  ],
+ *  localStorage: false,
+ *  paths: {...},
+ *  loadOrder: [
+ *      ...
+ *      {
+ *          path: '../foo/bar.js",
+ *          idx: 158,
+ *          requires; [1,2,3,...,145,157],
+ *          uses: [182, 193]
+ *      },
+ *      ...
+ *  ],
+ *  classes: {
+ *      ...
+ *      'Ext.panel.Panel': {
+ *          requires: [...],
+ *          uses: [...],
+ *          aliases: [...],
+ *          alternates: [...],
+ *          mixins: [...]
+ *      },
+ *      'Ext.rtl.util.Renderable': {
+ *          requires: [...],
+ *          uses: [...],
+ *          aliases: [...],
+ *          alternates: [...],
+ *          mixins: [...]
+ *          override: 'Ext.util.Renderable'
+ *      },
+ *      ...
+ *  },
+ *  packages: {
+ *      ...
+ *      "sencha-core": {
+ *          version: '1.2.3.4',
+ *          requires: []
+ *      },
+ *      "ext": {
+ *          version: '5.0.0.0',
+ *          requires: ["sencha-core"]
+ *      }.
+ *      ...
+ *  }
+ * }
+ *
+ *
+ * @type {String/Object}
+ */
+Ext.manifest = Ext.manifest || "bootstrap";
+
+Ext.Microloader.run();
