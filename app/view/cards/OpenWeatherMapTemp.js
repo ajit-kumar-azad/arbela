@@ -8,15 +8,16 @@ Ext.define('Arbela.view.cards.OpenWeatherMapTemp', {
 
     viewTemplate: {
         // header: false,
-        // layout: {
-        //     type: 'vbox',
-        //     align: 'stretch'
-        // },
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
         title: 'Weather (Temperature)',
         // height: 90,
         items: [{
             xtype: 'container',
             cls: 'cyanbg',
+            flex: 1,
             layout: {
                 type: 'hbox',
                 align: 'stretch'

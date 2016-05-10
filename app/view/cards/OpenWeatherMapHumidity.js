@@ -8,15 +8,16 @@ Ext.define('Arbela.view.cards.OpenWeatherMapHumidity', {
 
     viewTemplate: {
         // header: false,
-        // layout: {
-        //     type: 'vbox',
-        //     align: 'stretch'
-        // },
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
         title: 'Weather (Humidity)',
         // height: 90,
         items: [{
             xtype: 'container',
             cls: 'orangebg',
+            flex: 1,
             layout: {
                 type: 'hbox',
                 align: 'stretch'

@@ -8,15 +8,16 @@ Ext.define('Arbela.view.cards.CurrentTime', {
 
     viewTemplate: {
         // header: false,
-        // layout: {
-        //     type: 'hbox',
-        //     align: 'stretch'
-        // },
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        },
         title: 'Current Time',
         // height: 90,
         items: [{
             xtype: 'container',
             cls: 'greenbg',
+            flex: 1,
             layout: {
                 type: 'hbox',
                 align: 'stretch'
