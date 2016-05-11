@@ -9,7 +9,7 @@ Copyright(c) [Walking Tree](http://walkingtree.in) and [Ajit Kumar](https://gith
 
 ### Default Dashboard
 
-![Image 1](https://github.com/ajit-kumar-azad/arbela/blob/master/screenshots/image03.png)
+![Image 1](https://github.com/ajit-kumar-azad/arbela/blob/master/screenshots/image05.png)
 
 ### IoT Dashboard
 
@@ -17,6 +17,6 @@ Copyright(c) [Walking Tree](http://walkingtree.in) and [Ajit Kumar](https://gith
 
 ### Generic Dashboard
 
-![Image 1](https://github.com/ajit-kumar-azad/arbela/blob/master/screenshots/image01.png)
+![Image 3](https://github.com/ajit-kumar-azad/arbela/blob/master/screenshots/image01.png)
 
-![Image 1](https://github.com/ajit-kumar-azad/arbela/blob/master/screenshots/image02.png)
+![Image 4](https://github.com/ajit-kumar-azad/arbela/blob/master/screenshots/image02.png)
