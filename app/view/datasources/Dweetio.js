@@ -39,7 +39,7 @@ Ext.define('Arbela.view.datasources.Dweetio', {
                 var data = Ext.JSON.decode(response.responseText);
                 console.log('Got response: ', data);
                 if (data["this"] === 'succeeded') {
-                    me.setData(data.with[0].content);
+                    me.setData(data['with'][0].content);
                 }
             }
         });
