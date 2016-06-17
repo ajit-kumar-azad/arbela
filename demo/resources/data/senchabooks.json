@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "books": [{
+    "id": 1,
+    "title": "Sencha Touch Cookbook",
+    "imgurl": "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/5443EXP_Sencha%20Touch%20Cookbook.jpg",
+    "desc": "Over 100 recipes for creating HTML5-based cross-platform apps for touch devices with this book and ebook",
+    "readmore": "https://www.packtpub.com/application-development/sencha-touch-cookbook"
+  }, {
+    "id": 2,
+    "title": "Sencha Touch Cookbook, 2nd Ed",
+    "imgurl": "https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9185OS.jpg",
+    "desc": "This cookbook-style tutorial will make it easy to create multi-platform applications for touch-based mobile devices.",
+    "readmore": "https://www.packtpub.com/application-development/sencha-touch-cookbook-second-edition"
+  }, {
+    "id": 3,
+    "title": "Sencha MVC Architecture",
+    "imgurl": "https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/8888OS_cov.jpg",
+    "desc": "A practical guide for designers and developers to create scalable enterprise-class web applications using Sencha MVC architecture.",
+    "readmore": "https://www.packtpub.com/web-development/sencha-mvc-architecture"
+  }, {
+    "id": 4,
+    "title": "Sencha Charts Essentials",
+    "imgurl": "https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/coming%20soon%20mockup_OS_81.png",
+    "desc": "Make your data stand out with Sencha Charts and this quick practical guide for experienced developers.",
+    "readmore": "https://www.packtpub.com/web-development/sencha-charts-essentials"
+  }, {
+    "id": 5,
+    "title": "Learning Ext JS, 4th Ed",
+    "imgurl": "https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B03753_MockupCover_Normal.jpg",
+    "desc": "Create powerful web applications with the new and improved Ext JS 5 library",
+    "readmore": "https://www.packtpub.com/web-development/learning-extjs-fourth-edition"
+  }]
+}

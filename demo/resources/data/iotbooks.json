@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "books": [{
+    "id": 1,
+    "title": "Arduino Development Cookbook",
+    "imgurl": "https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/2943OS.jpg",
+    "desc": "Over 50 hands-on recipes to quickly build and understand Arduino projects, from the simplest to the most extraordinary",
+    "readmore": "https://www.packtpub.com/hardware-and-creative/arduino-development-cookbook"
+  }, {
+    "id": 2,
+    "title": "Arduino Home Automation Projects",
+    "imgurl": "https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/6064OS.jpg",
+    "desc": "Automate your home using the powerful Arduino platform.",
+    "readmore": "https://www.packtpub.com/hardware-and-creative/arduino-home-automation-projects"
+  }, {
+    "id": 3,
+    "title": "Arduino Android Blueprints",
+    "imgurl": "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/3701_0389OS_Arduino%20Android%20Blueprints.jpg",
+    "desc": "Get the best out of Arduino by interfacing it with Android to create engaging interactive projects.",
+    "readmore": "https://www.packtpub.com/hardware-and-creative/arduino-android-blueprints"
+  }, {
+    "id": 4,
+    "title": "Internet of Things with the Arduino Yún",
+    "imgurl": "https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/8007OS.jpg",
+    "desc": "Projects to help you build a world of smarter things.",
+    "readmore": "https://www.packtpub.com/hardware-and-creative/internet-things-arduino-y%C3%BAn"
+  }, {
+    "id": 5,
+    "title": "Arduino Robotic Projects",
+    "imgurl": "https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9829OS.jpg",
+    "desc": "Build awesome and complex robots with the power of Arduino.",
+    "readmore": "https://www.packtpub.com/hardware-and-creative/arduino-robotic-projects"
+  }]
+}
