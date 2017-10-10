@@ -49,6 +49,7 @@ Ext.define('Arbela.view.blades.WebsiteTraffics', {
         }]
     },
     setBladeData: function(dataCfg) {
+        console.log('=====> SETTING BLADE DATA <====== ', dataCfg);
         this.down('sparklinebar').setValues(dataCfg.value1);
     }
 });

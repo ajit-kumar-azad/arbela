@@ -31,7 +31,7 @@ Ext.define('Arbela.view.blades.SparklineLine', {
             height: 50,
             width: 90,
             name: 'sparkline',
-            values: []
+            values: ['23', '27', '33']
         }, {
             xtype: 'component',
             flex: 1,

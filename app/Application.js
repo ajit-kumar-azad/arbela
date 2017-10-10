@@ -17,7 +17,8 @@ Ext.define('Arbela.Application', {
         'Arbela.view.datasources.Dweetio',
         'Arbela.protocols.MQTT',
         'Arbela.view.datasources.MQTT',
-        'Arbela.view.datasources.PubNub'
+        'Arbela.view.datasources.PubNub',
+        'Arbela.view.datasources.TimescaleDB'
     ],
     views: [
         'MyViewport',
@@ -38,6 +39,8 @@ Ext.define('Arbela.Application', {
         'blades.InventoryChart',
         'blades.SparklineLine',
         'blades.TwoState',
+        'blades.DaywiseFact',
+        'blades.CategorywiseFactTabular',
         'cards.CurrentTime',
         'cards.OpenWeatherMapTemp',
         'cards.OpenWeatherMapHumidity'
